@@ -3780,6 +3780,6 @@ platforms = [
 
 [tool.nab.validation]
 version = 1
-all-inputs-sha256 = "8ef75757f8e1b5983439523925f4e1274fa3dd3df4383ba69c15d13a73ea28fe"
-selection-inputs-sha256 = "c471b6f745f74f253a2c2ba7095b5b07a49f5b770f1a9ff8b71a6eb8704a9431"
+all-inputs-sha256 = "85a0f5679af4adc42507b923d90c366e1f5ade4241430d99fa47d40f8ebe7e45"
+selection-inputs-sha256 = "68184f1380d92ce60d16479510c1758af02286eb2dfe58b04393def9ca5f347b"
 contents-sha256 = "ef98574fb95a6767aed70351a3b1ab64e68e6d5c01614aaa8e57a1800ede1cd7"
