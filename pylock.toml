@@ -1343,28 +1343,28 @@ sha256 = "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
 
 [[packages]]
 name = "jsonschema-rs"
-version = "0.61.0"
+version = "0.61.1"
 marker = "\"bench\" in dependency_groups or \"dev\" in dependency_groups or \"test\" in dependency_groups or \"type\" in dependency_groups or \"validate\" in extras"
 requires-python = ">=3.10"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "jsonschema_rs-0.61.0.tar.gz"
-upload-time = 2026-11-08T16:37:22.006116+00:00
-url = "https://files.pythonhosted.org/packages/fb/cd/de915381d5474c939616bf73ceda668bf85a8aa1587c43a1bb1d9946b3d7/jsonschema_rs-0.61.0.tar.gz"
-size = 2958471
+name = "jsonschema_rs-0.61.1.tar.gz"
+upload-time = 2026-11-10T09:54:17.891410+00:00
+url = "https://files.pythonhosted.org/packages/30/2f/ad39e5efef29bb236c50e8d3b537588296e2181e5e1837c982336292ff4e/jsonschema_rs-0.61.1.tar.gz"
+size = 2977623
 
 [packages.sdist.hashes]
-sha256 = "e603b8ecaaa43942634b506688175bf95f2e546c7470592faa396eba361f54ff"
+sha256 = "bb2ba8ff6e282205a81775dce969856b05e3445f7568f9f335e30420f351d6e5"
 
 [[packages.wheels]]
-name = "jsonschema_rs-0.61.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
-upload-time = 2026-11-08T16:36:41.246591+00:00
-url = "https://files.pythonhosted.org/packages/63/cd/8bc2e34e97f181314a2d786f2cd220e5a3c252bfcaffdd4a2ffb585b6897/jsonschema_rs-0.61.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
-size = 6233596
+name = "jsonschema_rs-0.61.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+upload-time = 2026-11-10T09:53:31.338036+00:00
+url = "https://files.pythonhosted.org/packages/74/7f/8d64e2bffc8a243cd3916bd537a77f37b48d7da535d556b09611c4b054ee/jsonschema_rs-0.61.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+size = 6323376
 
 [packages.wheels.hashes]
-sha256 = "6620c857c351cd34909f00161d043db04572a32225a92e55faf79495f9aa2bf9"
+sha256 = "6652090516c88816e491a02e5fcc6cd623e2e81daab46e40826bd460a23f612c"
 
 [[packages]]
 name = "keyring"
@@ -1455,7 +1455,7 @@ sha256 = "da1a3fa8266e30f0ce7e97c6a54eefaae8edd1e5f86f3eb8b95457cae90265ea"
 
 [[packages]]
 name = "markdown-it-py"
-version = "4.2.0"
+version = "4.3.0"
 marker = "\"dev\" in dependency_groups or \"pkg-meta\" in dependency_groups or \"release-news\" in dependency_groups or \"release-notes\" in dependency_groups or \"release-prepare\" in dependency_groups"
 requires-python = ">=3.10"
 dependencies = [
@@ -1464,22 +1464,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "markdown_it_py-4.2.0.tar.gz"
-upload-time = 2026-05-07T12:08:28.360612+00:00
-url = "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
-size = 82454
+name = "markdown_it_py-4.3.0.tar.gz"
+upload-time = 2026-11-10T16:18:30.467403+00:00
+url = "https://files.pythonhosted.org/packages/16/fc/cee2c45553c9a9bf77d8b0c391560c556d7ed756b1f0bb35eb5d48db09ea/markdown_it_py-4.3.0.tar.gz"
+size = 242701
 
 [packages.sdist.hashes]
-sha256 = "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
+sha256 = "91a58fa5b72c71a40cf7177250fd767480d7a2bb3ac426ccfb76fb90305fdaaa"
 
 [[packages.wheels]]
-name = "markdown_it_py-4.2.0-py3-none-any.whl"
-upload-time = 2026-05-07T12:08:27.182789+00:00
-url = "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl"
-size = 91687
+name = "markdown_it_py-4.3.0-py3-none-any.whl"
+upload-time = 2026-11-10T16:18:28.975379+00:00
+url = "https://files.pythonhosted.org/packages/c9/31/5f0ac2f1a1c67423c995c731a11cd4ad05d081a2be969d74f868bdb9cc70/markdown_it_py-4.3.0-py3-none-any.whl"
+size = 96951
 
 [packages.wheels.hashes]
-sha256 = "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a"
+sha256 = "7aa1511a46c39138de78d9eba92ce47e63124d8003fc98b3a351909e04239efa"
 
 [[packages]]
 name = "markupsafe"
@@ -1592,7 +1592,7 @@ sha256 = "7305a50efd2a140d7c83505b58e3ac5df2b09e293f9bbe72f6c7bee8c678b005"
 
 [[packages]]
 name = "mdit-py-plugins"
-version = "0.6.1"
+version = "0.7.0"
 marker = "\"release-news\" in dependency_groups or \"release-notes\" in dependency_groups or \"release-prepare\" in dependency_groups"
 requires-python = ">=3.10"
 dependencies = [
@@ -1601,22 +1601,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "mdit_py_plugins-0.6.1.tar.gz"
-upload-time = 2026-05-13T09:03:38.910230+00:00
-url = "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz"
-size = 56114
+name = "mdit_py_plugins-0.7.0.tar.gz"
+upload-time = 2026-11-10T16:29:31.081315+00:00
+url = "https://files.pythonhosted.org/packages/ad/a4/77a4e1be19fd9b08993c76d5e54979ac836b327754f1f5fecfed1b56cc67/mdit_py_plugins-0.7.0.tar.gz"
+size = 51268
 
 [packages.sdist.hashes]
-sha256 = "a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0"
+sha256 = "26d2179227aaf4d1dc7acffe7a738cbd15cade6b5a61cff0a2cbf9fed93efede"
 
 [[packages.wheels]]
-name = "mdit_py_plugins-0.6.1-py3-none-any.whl"
-upload-time = 2026-05-13T09:03:37.760000+00:00
-url = "https://files.pythonhosted.org/packages/a5/69/6da5581c6a7fede7dc261bf4e67d6adca4196f176b43288b55b3db395b6e/mdit_py_plugins-0.6.1-py3-none-any.whl"
-size = 66663
+name = "mdit_py_plugins-0.7.0-py3-none-any.whl"
+upload-time = 2026-11-10T16:29:29.847227+00:00
+url = "https://files.pythonhosted.org/packages/4d/d3/d07e61326f150944ead0da9d0b39fb20d7fa367bbc951b10fca6bb1c7382/mdit_py_plugins-0.7.0-py3-none-any.whl"
+size = 72937
 
 [packages.wheels.hashes]
-sha256 = "214c82fb2ac524472ab6a5bcab1de80f73b50443e187f401bfd77efbc7c6481d"
+sha256 = "7f8e30403f3dd8bfe3afcdcbc6e61066d3f2e714167507b9c26eb385ec399353"
 
 [[packages]]
 name = "mdurl"
@@ -2850,28 +2850,28 @@ sha256 = "7e207fa178741da09cdee59d3ecec3827ad5f92b1fc5c9ff3755b639f71f5752"
 
 [[packages]]
 name = "soupsieve"
-version = "4.0.1"
+version = "4.1"
 marker = "\"dev\" in dependency_groups or \"docs\" in dependency_groups or \"type\" in dependency_groups"
 requires-python = ">=3.11.5"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "soupsieve-4.0.1.tar.gz"
-upload-time = 2026-11-04T16:36:27.749881+00:00
-url = "https://files.pythonhosted.org/packages/01/7c/a64eedae0b7776cb9602d2da9cb8f8caae8e1b4c1da5e8e87bf1e68121ec/soupsieve-4.0.1.tar.gz"
-size = 153302
+name = "soupsieve-4.1.tar.gz"
+upload-time = 2026-11-10T01:59:50.399344+00:00
+url = "https://files.pythonhosted.org/packages/95/48/21a393ff731b8f928fa4f8176f9a7ceba2252ee60a5149f25b45c292aa5c/soupsieve-4.1.tar.gz"
+size = 161955
 
 [packages.sdist.hashes]
-sha256 = "7621e3c5f6b371ed2c5eabaac5de300ac3d66d05e6d7f34783e31b63c4f90c75"
+sha256 = "ca9abf7126667010d8f6e9b39bfc1bc3b23c8aed9bcb0f54a754dde969bb8aab"
 
 [[packages.wheels]]
-name = "soupsieve-4.0.1-py3-none-any.whl"
-upload-time = 2026-11-04T16:36:26.158796+00:00
-url = "https://files.pythonhosted.org/packages/2c/5c/4f68370847b561a389dd9a2d7eb3d19fd8cbb8acbae543a0c6b8d0d9700b/soupsieve-4.0.1-py3-none-any.whl"
-size = 50688
+name = "soupsieve-4.1-py3-none-any.whl"
+upload-time = 2026-11-10T01:59:48.571612+00:00
+url = "https://files.pythonhosted.org/packages/88/73/6a2087c72975cfc07394623bca8d17654342ea4055ae368deafe5a81a542/soupsieve-4.1-py3-none-any.whl"
+size = 52302
 
 [packages.wheels.hashes]
-sha256 = "2e68cf7dd5a0f29d81f9d485275ccf294e6475f615e211895d91cb81f8614f04"
+sha256 = "e4d667b3974ce6e038e7390486b8093369854a1d345ffdd4c121dfc4a782e809"
 
 [[packages]]
 name = "spdx-tools"
@@ -3066,7 +3066,7 @@ sha256 = "fb543fd386d917746c9a2c50360c7905b605726b9355cd26e9974857afeae06e"
 
 [[packages]]
 name = "sphinx-design"
-version = "0.7.0"
+version = "0.8.0"
 marker = "\"dev\" in dependency_groups or \"docs\" in dependency_groups or \"type\" in dependency_groups"
 requires-python = ">=3.11"
 dependencies = [
@@ -3075,22 +3075,22 @@ dependencies = [
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "sphinx_design-0.7.0.tar.gz"
-upload-time = 2026-01-19T13:12:53.297780+00:00
-url = "https://files.pythonhosted.org/packages/13/7b/804f311da4663a4aecc6cf7abd83443f3d4ded970826d0c958edc77d4527/sphinx_design-0.7.0.tar.gz"
-size = 2203582
+name = "sphinx_design-0.8.0.tar.gz"
+upload-time = 2026-11-10T17:16:39.673298+00:00
+url = "https://files.pythonhosted.org/packages/b0/c3/5d0f3aff52337edea9fe1d3f35ecba8a235b0490afb185544299a03a97d0/sphinx_design-0.8.0.tar.gz"
+size = 2254778
 
 [packages.sdist.hashes]
-sha256 = "d2a3f5b19c24b916adb52f97c5f00efab4009ca337812001109084a740ec9b7a"
+sha256 = "57fa4d96378525122947ab6109c6e490190e3119dc10f3e3adf6b71444bf3bb4"
 
 [[packages.wheels]]
-name = "sphinx_design-0.7.0-py3-none-any.whl"
-upload-time = 2026-01-19T13:12:51.077508+00:00
-url = "https://files.pythonhosted.org/packages/30/cf/45dd359f6ca0c3762ce0490f681da242f0530c49c81050c035c016bfdd3a/sphinx_design-0.7.0-py3-none-any.whl"
-size = 2220350
+name = "sphinx_design-0.8.0-py3-none-any.whl"
+upload-time = 2026-11-10T17:16:37.538629+00:00
+url = "https://files.pythonhosted.org/packages/b9/9a/e929b7fb9497d8e12bcda1777a7076f7c38d644216e91665bcfff6cab90d/sphinx_design-0.8.0-py3-none-any.whl"
+size = 2288922
 
 [packages.wheels.hashes]
-sha256 = "f82bf179951d58f55dca78ab3706aeafa496b741a91b1911d371441127d64282"
+sha256 = "861fecb064c3da5ff48031a237692ccb7c2e671f8c4aa84d4b9eef3cb8fd9c91"
 
 [[packages]]
 name = "sphinx-inline-tabs"
@@ -3762,8 +3762,8 @@ size = 11280
 sha256 = "04e15df7083642d5b791e51f597cffef8a92d770ecf5160c529b5a7b53b40100"
 
 [tool.nab]
-nab-version = "0.0.27"
-created-at = 2026-11-16T19:04:58.603181+00:00
+nab-version = "0.0.28"
+created-at = 2026-11-17T18:13:39.936303+00:00
 command-line = [
     "nab",
     "lock",
@@ -3781,6 +3781,6 @@ platforms = [
 
 [tool.nab.validation]
 version = 1
-all-inputs-sha256 = "57b4570472c000aa3cd8f5cd60be5e2efa55dc4fb4f49e1be0381947fffd88f6"
-selection-inputs-sha256 = "cdf50a255a2143457a1d0746d1ac5e4cd9c4746e1c05aaf19160cff45c56f099"
-contents-sha256 = "813595f440c8eca5fe043d71cd730bcc702f628019c7c7f523a7b76ba6699b4a"
+all-inputs-sha256 = "343d5feca2697c3da1fc7d4dd58d3f82f069823c4329daf018b3133638d74e4b"
+selection-inputs-sha256 = "b1f40f092101403d0bba762d4fca938adce987f9cf3488713265f5574d0d517b"
+contents-sha256 = "007ddc44a78ecc94d033e5baf65155e64abf84f3889eb6a918fc566ef8e787d3"
