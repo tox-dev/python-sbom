@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [f"{__spec__.parent}._sdist"]  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+
 from ._sdist import add_to_sdist
 
 __all__ = [

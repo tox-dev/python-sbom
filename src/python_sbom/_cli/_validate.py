@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["python_sbom._validate._artifact"]
+
 import sys
 from typing import TYPE_CHECKING, Protocol
 

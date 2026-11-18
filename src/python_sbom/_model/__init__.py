@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    f"{__spec__.parent}._content",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._identity",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._inputs",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._types",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 from ._content import BundledWheelInfo, ContentProvider, Contributions, ProviderContext
 from ._identity import ProjectIdentity
 from ._inputs import Revision, Settings

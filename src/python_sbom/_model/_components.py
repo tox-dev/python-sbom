@@ -2,6 +2,17 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "email.utils",
+    "itertools",
+    "packaging.utils",
+    f"{__spec__.parent}._graph",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._iri",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._licenses",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._names",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._types",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import re
 from email.utils import getaddresses
 from itertools import starmap

@@ -2,6 +2,21 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "csv",
+    "installer.records",
+    "installer.utils",
+    "io",
+    "pathlib",
+    "python_sbom",
+    "shutil",
+    "tempfile",
+    "typing",
+    "zipfile",
+    "zipremove",
+    f"{__spec__.parent}._zip",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import csv
 import os
 import shutil

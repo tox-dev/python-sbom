@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [f"{__spec__.parent}._embed"]  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+
 from ._embed import embed_built
 
 __all__ = [

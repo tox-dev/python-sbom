@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "python_sbom",
+    "python_sbom._model._archive",
+    "python_sbom._model._inputs",
+    "python_sbom._model._metadata",
+    "python_sbom._model._names",
+]
+
 from typing import TYPE_CHECKING, Final
 
 from python_sbom import SbomError

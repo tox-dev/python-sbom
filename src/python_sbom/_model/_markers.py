@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["packaging.markers"]
+
 from typing import TYPE_CHECKING, Final
 
 from packaging.markers import Marker, UndefinedComparison

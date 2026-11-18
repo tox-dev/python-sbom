@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["collections"]
+
 from collections import Counter
 from typing import TYPE_CHECKING, Final
 

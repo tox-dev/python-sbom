@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "python_sbom",
+    "python_sbom._formats._json",
+    "python_sbom._formats._spdx",
+    "python_sbom._validate._limits",
+]
+
 from typing import TYPE_CHECKING, Protocol
 
 from python_sbom import SbomError

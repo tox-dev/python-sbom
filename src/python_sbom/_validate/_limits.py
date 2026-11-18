@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["typing"]
+
 from typing import Final
 
 # every check takes time in proportion to the count, so the cap bounds the work an untrusted document can ask for, far

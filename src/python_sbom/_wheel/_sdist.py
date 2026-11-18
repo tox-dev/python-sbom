@@ -2,6 +2,16 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "gzip",
+    "io",
+    "pathlib",
+    "python_sbom",
+    "tarfile",
+    "tempfile",
+    "typing",
+]
+
 import gzip
 import io
 import os

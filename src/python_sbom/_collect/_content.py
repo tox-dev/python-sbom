@@ -2,6 +2,15 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "importlib.machinery",
+    "inspect",
+    "pathlib",
+    "pkgutil",
+    "python_sbom",
+    "python_sbom._model._content",
+]
+
 import inspect
 import pkgutil
 import sys

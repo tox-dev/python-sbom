@@ -2,6 +2,22 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "importlib.metadata",
+    "installer.records",
+    "itertools",
+    "json",
+    "packaging.direct_url",
+    "packaging.requirements",
+    "packaging.utils",
+    "platform",
+    "python_sbom",
+    "python_sbom._model._inputs",
+    "python_sbom._model._metadata",
+    "python_sbom._model._record",
+    "warnings",
+]
+
 import json
 import os
 import platform

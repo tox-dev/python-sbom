@@ -2,6 +2,18 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "datetime",
+    "json",
+    "pathlib",
+    "python_sbom",
+    "urllib.parse",
+    "uuid",
+    f"{__spec__.parent}._graph",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._names",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._tools",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import json
 import uuid
 from datetime import UTC, datetime

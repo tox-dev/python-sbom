@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "argparse",
+    "pathlib",
+    "python_sbom._validate._limits",
+    "python_sbom.version",
+]
+
 from argparse import (
     ArgumentParser,
     ArgumentTypeError,

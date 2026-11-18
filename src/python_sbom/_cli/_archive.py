@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["pathlib", "python_sbom._generate._archive"]
+
 import sys
 from pathlib import Path, PurePosixPath
 from typing import Protocol

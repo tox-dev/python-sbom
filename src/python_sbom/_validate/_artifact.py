@@ -2,6 +2,12 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "python_sbom._wheel._zip",
+    "zipfile",
+    f"{__spec__.parent}._document",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import zipfile
 from typing import IO, TYPE_CHECKING, Final
 

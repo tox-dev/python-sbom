@@ -2,6 +2,19 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "hatchling.builders.utils",
+    "hatchling.utils.constants",
+    "pathlib",
+    "python_sbom",
+    "python_sbom._collect._content",
+    "python_sbom._collect._revision",
+    "python_sbom._collect._settings",
+    "shutil",
+    "tempfile",
+    "weakref",
+]
+
 import shutil
 import tempfile
 import weakref

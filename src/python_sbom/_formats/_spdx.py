@@ -2,6 +2,15 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "datetime",
+    "hashlib",
+    "json",
+    "python_sbom._model._graph",
+    "python_sbom._model._names",
+    "python_sbom.version",
+]
+
 import hashlib
 import json
 import re

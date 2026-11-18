@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["email.parser", "email.policy", "packaging.metadata"]
+
 import re
 from dataclasses import dataclass
 from email.parser import HeaderParser

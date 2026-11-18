@@ -2,6 +2,19 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "collections",
+    "license_expression",
+    "spdx_tools.common.spdx_licensing",
+    "spdx_tools.spdx.parser.error",
+    "spdx_tools.spdx.parser.jsonlikedict.json_like_dict_parser",
+    "spdx_tools.spdx.validation.creation_info_validator",
+    "spdx_tools.spdx.validation.extracted_licensing_info_validator",
+    "spdx_tools.spdx.validation.package_validator",
+    "spdx_tools.spdx.validation.spdx_id_validators",
+    f"{__spec__.parent}._limits",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import json
 from collections import Counter
 from importlib.resources import files

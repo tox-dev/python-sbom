@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "importlib",
+    "pathlib",
+    f"{__spec__.parent}._collect",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._errors",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import importlib
 from collections.abc import Mapping as _Mapping
 from functools import cache, reduce

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["python_sbom._model._graph"]
+
 from typing import TYPE_CHECKING, Final
 
 from license_expression import (

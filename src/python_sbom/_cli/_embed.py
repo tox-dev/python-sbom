@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["pathlib", "python_sbom._generate._embed"]
+
 import sys
 from pathlib import Path
 from typing import Protocol

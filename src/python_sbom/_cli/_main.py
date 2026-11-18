@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["pkgutil", "python_sbom", f"{__spec__.parent}._parser"]  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+
 import pkgutil
 import sys
 from typing import TYPE_CHECKING

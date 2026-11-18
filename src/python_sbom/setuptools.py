@@ -2,6 +2,15 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "pathlib",
+    "setuptools.command.bdist_wheel",
+    "setuptools.command.sdist",
+    "tomllib",
+    f"{__spec__.parent}._collect",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._errors",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import tomllib
 from pathlib import Path
 from typing import TYPE_CHECKING

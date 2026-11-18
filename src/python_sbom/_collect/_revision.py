@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "python_sbom",
+    "python_sbom._model._inputs",
+    "shutil",
+    "subprocess",
+    "warnings",
+]
+
 import os
 import re
 import shutil

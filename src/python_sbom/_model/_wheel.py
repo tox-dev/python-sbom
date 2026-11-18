@@ -2,6 +2,17 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "itertools",
+    "packaging.requirements",
+    "pathlib",
+    "urllib.parse",
+    f"{__spec__.parent}._components",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._inputs",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._markers",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._names",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 from itertools import starmap
 from pathlib import PurePosixPath
 from typing import TYPE_CHECKING, Final

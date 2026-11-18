@@ -2,6 +2,12 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "packageurl",
+    f"{__spec__.parent}._components",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._names",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 from typing import TYPE_CHECKING, Final
 
 from packageurl import PackageURL

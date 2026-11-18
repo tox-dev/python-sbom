@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["packaging.licenses"]
+
 import re
 from typing import TYPE_CHECKING, Final
 

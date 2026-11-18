@@ -2,6 +2,16 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "importlib.util",
+    "math",
+    "python_sbom",
+    "python_sbom._formats._json",
+    "python_sbom._formats._spdx",
+    "python_sbom._model._graph",
+    "python_sbom._model._names",
+]
+
 import math
 import re
 from importlib.util import find_spec

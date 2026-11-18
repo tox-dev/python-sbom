@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [f"{__spec__.parent}._hook"]  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+
 from hatchling.plugin import hookimpl
 
 from ._hook import SbomBuildHook

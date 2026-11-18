@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["packageurl", "packaging.utils", "typing"]
+
 import re
 from types import MappingProxyType
 from typing import Final

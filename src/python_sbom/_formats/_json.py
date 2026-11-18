@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = ["json", "python_sbom"]
+
 import json
 from typing import TYPE_CHECKING, Any, TypeAlias
 

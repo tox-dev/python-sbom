@@ -2,6 +2,16 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "collections",
+    "hashlib",
+    "installer.sources",
+    "python_sbom",
+    "python_sbom._model._metadata",
+    "zipfile",
+    "zlib",
+]
+
 import hashlib
 import zipfile
 import zlib

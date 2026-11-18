@@ -2,6 +2,15 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "base64",
+    "binascii",
+    "installer.records",
+    "itertools",
+    "python_sbom",
+    f"{__spec__.parent}._inputs",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 import base64
 import binascii
 from itertools import starmap

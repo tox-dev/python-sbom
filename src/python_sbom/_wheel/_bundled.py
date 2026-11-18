@@ -2,6 +2,19 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "collections",
+    "concurrent.futures",
+    "installer.records",
+    "installer.sources",
+    "packaging.requirements",
+    "python_sbom",
+    "python_sbom._model._inputs",
+    "python_sbom._model._metadata",
+    "python_sbom._model._record",
+    f"{__spec__.parent}._zip",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from typing import TYPE_CHECKING, Final

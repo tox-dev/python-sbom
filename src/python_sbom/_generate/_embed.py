@@ -2,6 +2,22 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "pathlib",
+    "python_sbom._collect._content",
+    "python_sbom._collect._facts",
+    "python_sbom._collect._revision",
+    "python_sbom._collect._settings",
+    "python_sbom._collect._wheel",
+    "python_sbom._formats._json",
+    "python_sbom._model._bom",
+    "python_sbom._model._content",
+    "python_sbom._model._identity",
+    "python_sbom._model._wheel",
+    "python_sbom._wheel._reader",
+    "python_sbom._wheel._write",
+]
+
 from pathlib import PurePosixPath
 from typing import TYPE_CHECKING
 

@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "pathlib",
+    "python_sbom",
+    "python_sbom._model._inputs",
+    "python_sbom._wheel._zip",
+]
+
 from pathlib import PurePath
 from typing import TYPE_CHECKING, Final
 

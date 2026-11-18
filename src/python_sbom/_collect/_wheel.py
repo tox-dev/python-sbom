@@ -2,6 +2,14 @@
 
 from __future__ import annotations
 
+__lazy_modules__ = [
+    "python_sbom",
+    "python_sbom._model._inputs",
+    "python_sbom._model._names",
+    "python_sbom._wheel._zip",
+    f"{__spec__.parent}._source",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
+
 from typing import TYPE_CHECKING, Final
 
 from python_sbom import SbomError
