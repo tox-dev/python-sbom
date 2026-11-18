@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
-__lazy_modules__ = ["calendar", "pathlib", "tempfile", f"{__spec__.parent}._collect"]  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+__lazy_modules__ = [
+    "calendar",
+    "pathlib",
+    "tempfile",
+    f"{__spec__.parent}._collect",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
 
 import calendar
 import tempfile

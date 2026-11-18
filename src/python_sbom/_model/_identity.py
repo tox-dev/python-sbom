@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-__lazy_modules__ = ["uuid", f"{__spec__.parent}._iri", f"{__spec__.parent}._names"]  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+__lazy_modules__ = [
+    "uuid",
+    f"{__spec__.parent}._iri",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._names",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
 
 import uuid
 from dataclasses import dataclass

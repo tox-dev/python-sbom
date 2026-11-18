@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-__lazy_modules__ = ["io", f"{__spec__.parent}._bundled", f"{__spec__.parent}._zip"]  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+__lazy_modules__ = [
+    "io",
+    f"{__spec__.parent}._bundled",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+    f"{__spec__.parent}._zip",  # ty: ignore[missing-union-attribute]  # imported modules have a spec
+]
 
 from contextlib import contextmanager
 from dataclasses import dataclass
