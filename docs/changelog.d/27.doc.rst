@@ -1,0 +1,2 @@
+Explain in the README why the license expression is ``MIT AND Apache-2.0``: the project code is MIT and the bundled
+CycloneDX schema files are Apache-2.0.

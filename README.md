@@ -69,3 +69,11 @@ The [documentation](https://python-sbom.readthedocs.io) starts with a tutorial, 
 options and commands, and how the SBOM is built. It also covers describing a
 [zipapp](https://docs.python.org/3/library/zipapp.html), adding project knowledge through a content provider, and
 rendering an SBOM as [SPDX](https://spdx.dev/) (Software Package Data Exchange).
+
+## License
+
+python-sbom's own code is under the [MIT license](https://github.com/tox-dev/python-sbom/blob/main/LICENSE). The wheel
+and source distribution also ship the schema files `python-sbom validate` checks documents against, unmodified from
+[CycloneDX/specification](https://github.com/CycloneDX/specification), under the
+[Apache-2.0 license](https://github.com/tox-dev/python-sbom/blob/main/src/python_sbom/_validate/schemas/LICENSE). The
+package metadata covers both, so its license expression is `MIT AND Apache-2.0`.
