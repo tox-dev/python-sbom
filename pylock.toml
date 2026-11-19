@@ -619,37 +619,37 @@ sha256 = "2832961f6ffcfe4b57c338bc3418a3526f495c26fb9c54565409c5532f7c41be"
 
 [[packages]]
 name = "coverage"
-version = "7.17.2"
+version = "7.17.3"
 marker = "\"bench\" in dependency_groups or \"cibuildwheel\" in dependency_groups or \"delocate\" in dependency_groups or \"dev\" in dependency_groups or \"example\" in dependency_groups or \"flit-core\" in dependency_groups or \"hatchling\" in dependency_groups or \"maturin\" in dependency_groups or \"meson-python\" in dependency_groups or \"pdm-backend\" in dependency_groups or \"poetry-core\" in dependency_groups or \"scikit-build-core\" in dependency_groups or \"setuptools\" in dependency_groups or \"test\" in dependency_groups or \"type\" in dependency_groups or \"uv-build\" in dependency_groups or \"zipapp\" in dependency_groups"
 requires-python = ">=3.11"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "coverage-7.17.2.tar.gz"
-upload-time = 2026-11-04T19:52:34.313215+00:00
-url = "https://files.pythonhosted.org/packages/78/4a/740c3134227763ebc30a226d7f2f29b25e35898d162dd8b2dd792be83fb2/coverage-7.17.2.tar.gz"
-size = 996756
+name = "coverage-7.17.3.tar.gz"
+upload-time = 2026-11-12T12:26:44.986785+00:00
+url = "https://files.pythonhosted.org/packages/ed/8f/19651ed6f648de7e1383bb759207078e2ad8addeca711187e1cb3a495f14/coverage-7.17.3.tar.gz"
+size = 1004507
 
 [packages.sdist.hashes]
-sha256 = "d05a1bef52f4d7f1b484a1cf46a8929e50963f910e51396373f06cd3b6248f38"
+sha256 = "6695d1bb2a9a2fbd7806d69d78cf30f35eb0f65045da0ec5b5045242fadd6a78"
 
 [[packages.wheels]]
-name = "coverage-7.17.2-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
-upload-time = 2026-11-04T19:51:49.047565+00:00
-url = "https://files.pythonhosted.org/packages/f5/c6/4f3931c3ff80a6f2608209181adb00527970a4b43b64c3aa323383c37d51/coverage-7.17.2-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
-size = 263632
+name = "coverage-7.17.3-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
+upload-time = 2026-11-12T12:26:05.491107+00:00
+url = "https://files.pythonhosted.org/packages/10/61/1bd79ec66957f4ea7ce5f687a18aa50f3b3e8715e4843f6ed3e5f03f24bf/coverage-7.17.3-cp315-cp315-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
+size = 264469
 
 [packages.wheels.hashes]
-sha256 = "3bd065e75c077d6de8cd3fe68699a8b47be3ec595af6b66e3629926839094609"
+sha256 = "a13a946d8de807d8992e56a09502952d81bfbb4b80204ef77a6a2a38b4ce22be"
 
 [[packages.wheels]]
-name = "coverage-7.17.2-py3-none-any.whl"
-upload-time = 2026-11-04T19:52:32.726109+00:00
-url = "https://files.pythonhosted.org/packages/da/91/1805cc144497d76a436f66a21fa57492bee7ed1257826fb992f03b9b2b6f/coverage-7.17.2-py3-none-any.whl"
-size = 219280
+name = "coverage-7.17.3-py3-none-any.whl"
+upload-time = 2026-11-12T12:26:43.553593+00:00
+url = "https://files.pythonhosted.org/packages/d1/8e/f7d7e69e2ad34ce08595b787eb578f669c00fd57d432ed4c7cfd71666f36/coverage-7.17.3-py3-none-any.whl"
+size = 219999
 
 [packages.wheels.hashes]
-sha256 = "e674027ceb6bfd959f1bb035000fd20fa8b717dc6765adaaf8bca347822c8c7d"
+sha256 = "21745c08f2835b847a16887b748d3084dddeb0571ae2a0d62e33644413568b99"
 
 [[packages]]
 name = "cryptography"
@@ -1031,28 +1031,28 @@ sha256 = "415290b84f464d2884303fca8974d38e7b85579069fab02a15db0828fbb1446d"
 
 [[packages]]
 name = "humanize"
-version = "4.16.0"
+version = "4.17.0"
 marker = "\"cibuildwheel\" in dependency_groups"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "humanize-4.16.0.tar.gz"
-upload-time = 2026-06-30T16:17:29.859993+00:00
-url = "https://files.pythonhosted.org/packages/0a/ea/13a1ef3c12d12662905801495283530251918b70d62d368f1d2e0272c70d/humanize-4.16.0.tar.gz"
-size = 89515
+name = "humanize-4.17.0.tar.gz"
+upload-time = 2026-11-12T12:33:34.370419+00:00
+url = "https://files.pythonhosted.org/packages/d0/a7/5391f6db94bf16289ca63ce2632eef2eba7b9991e701016ac66f04539d47/humanize-4.17.0.tar.gz"
+size = 90688
 
 [packages.sdist.hashes]
-sha256 = "7dc2244a2f84a4bfb1d36c37bac80cd78e35cdc5c119206d87b018e1445f3a3f"
+sha256 = "1d6a36c453dbfbb3f0b34601d2e0b4ce5d48d780305cd45714843f0068fde6ac"
 
 [[packages.wheels]]
-name = "humanize-4.16.0-py3-none-any.whl"
-upload-time = 2026-06-30T16:17:28.360556+00:00
-url = "https://files.pythonhosted.org/packages/b0/aa/0b7365d30fed43e7a3449aba1fe20a0a7174d9cf13e282af4e69ac825441/humanize-4.16.0-py3-none-any.whl"
-size = 137209
+name = "humanize-4.17.0-py3-none-any.whl"
+upload-time = 2026-11-12T12:33:32.955651+00:00
+url = "https://files.pythonhosted.org/packages/0c/74/bb970f876202aa0e8c4a1e9904f0b3482e73c752512962b7e957091d5acf/humanize-4.17.0-py3-none-any.whl"
+size = 133715
 
 [packages.wheels.hashes]
-sha256 = "353eb2f34c09d098b2880eee8bef21832eae6d174f48c5762fff7e5fcb74d01d"
+sha256 = "02d0899527760efe18011944f882df4970943b4cdff7b5a0ba7fed43a576ef98"
 
 [[packages]]
 name = "id"
@@ -1343,28 +1343,28 @@ sha256 = "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
 
 [[packages]]
 name = "jsonschema-rs"
-version = "0.61.1"
+version = "0.61.2"
 marker = "\"bench\" in dependency_groups or \"dev\" in dependency_groups or \"test\" in dependency_groups or \"type\" in dependency_groups or \"validate\" in extras"
 requires-python = ">=3.10"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "jsonschema_rs-0.61.1.tar.gz"
-upload-time = 2026-11-10T09:54:17.891410+00:00
-url = "https://files.pythonhosted.org/packages/30/2f/ad39e5efef29bb236c50e8d3b537588296e2181e5e1837c982336292ff4e/jsonschema_rs-0.61.1.tar.gz"
-size = 2977623
+name = "jsonschema_rs-0.61.2.tar.gz"
+upload-time = 2026-11-12T08:11:55.452364+00:00
+url = "https://files.pythonhosted.org/packages/30/d3/fedab55fadf17359ed45d7c347e13839b79aa5c85c083c417b6a0e8b12a9/jsonschema_rs-0.61.2.tar.gz"
+size = 2990382
 
 [packages.sdist.hashes]
-sha256 = "bb2ba8ff6e282205a81775dce969856b05e3445f7568f9f335e30420f351d6e5"
+sha256 = "8ea236493450c013f095d5d4d9d3b8e56fa0153fb305107f9a7134ea16bcf56b"
 
 [[packages.wheels]]
-name = "jsonschema_rs-0.61.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
-upload-time = 2026-11-10T09:53:31.338036+00:00
-url = "https://files.pythonhosted.org/packages/74/7f/8d64e2bffc8a243cd3916bd537a77f37b48d7da535d556b09611c4b054ee/jsonschema_rs-0.61.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
-size = 6323376
+name = "jsonschema_rs-0.61.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+upload-time = 2026-11-12T08:11:12.034634+00:00
+url = "https://files.pythonhosted.org/packages/f6/55/cea8729869eb926830596effc581bc80d42def04061c90dd51c9da1489c9/jsonschema_rs-0.61.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+size = 6380979
 
 [packages.wheels.hashes]
-sha256 = "6652090516c88816e491a02e5fcc6cd623e2e81daab46e40826bd460a23f612c"
+sha256 = "2ecc653144d3b70803bcc7b95b3f8714bdc3ad4a1f808d6aa747572cccc95a4d"
 
 [[packages]]
 name = "keyring"
@@ -3416,28 +3416,28 @@ sha256 = "b854164df26db268af05f49aa5c0344b10e27a494343ff05b1e0bad3b135f5a7"
 
 [[packages]]
 name = "ty"
-version = "0.0.100"
+version = "0.0.101"
 marker = "\"dev\" in dependency_groups or \"type\" in dependency_groups"
 requires-python = ">=3.8"
 index = "https://pypi.org/simple/"
 
 [packages.sdist]
-name = "ty-0.0.100.tar.gz"
-upload-time = 2026-11-09T20:16:27.534294+00:00
-url = "https://files.pythonhosted.org/packages/2a/b4/ac430b910566e28b1cd01faf7ee07ca38bcd7585b30fce8fd25dfc104edc/ty-0.0.100.tar.gz"
-size = 8238916
+name = "ty-0.0.101.tar.gz"
+upload-time = 2026-11-11T13:53:32.912191+00:00
+url = "https://files.pythonhosted.org/packages/34/6c/22c0680e71f529e084ee2e308a51f04317298248ee699f4914c02129c351/ty-0.0.101.tar.gz"
+size = 8244347
 
 [packages.sdist.hashes]
-sha256 = "ca75081ead663c077e40b90c38b6e9f039b6d168051e02918a8a1d7ecc4fa0dd"
+sha256 = "dbb43374b49fe30ea49e244da63aa90098dff1257a49ae4351b44881ccef724f"
 
 [[packages.wheels]]
-name = "ty-0.0.100-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-upload-time = 2026-11-09T20:16:05.195593+00:00
-url = "https://files.pythonhosted.org/packages/b8/56/02b46b2a5f78f6edbd29afde54fce4461dd6462f901974deac0c9c1a987b/ty-0.0.100-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-size = 16749475
+name = "ty-0.0.101-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+upload-time = 2026-11-11T13:53:06.036307+00:00
+url = "https://files.pythonhosted.org/packages/0d/ff/647ce788ceccacf2da38126115cf0ba505093aeadc0bc7a09da4f120cfb7/ty-0.0.101-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+size = 16832271
 
 [packages.wheels.hashes]
-sha256 = "e23076fd67dc5c740a5cd292f3bbc10b82127dd01df3cb559e12b3144ceef72d"
+sha256 = "e6d912d5593a6abc953b135c7d73d58dbeefb898d7306337ce16bbd88b01a616"
 
 [[packages]]
 name = "typing-extensions"
@@ -3763,7 +3763,7 @@ sha256 = "04e15df7083642d5b791e51f597cffef8a92d770ecf5160c529b5a7b53b40100"
 
 [tool.nab]
 nab-version = "0.0.28"
-created-at = 2026-11-17T18:13:39.936303+00:00
+created-at = 2026-11-19T15:01:03.950786+00:00
 command-line = [
     "nab",
     "lock",
@@ -3781,6 +3781,6 @@ platforms = [
 
 [tool.nab.validation]
 version = 1
-all-inputs-sha256 = "343d5feca2697c3da1fc7d4dd58d3f82f069823c4329daf018b3133638d74e4b"
-selection-inputs-sha256 = "b1f40f092101403d0bba762d4fca938adce987f9cf3488713265f5574d0d517b"
-contents-sha256 = "007ddc44a78ecc94d033e5baf65155e64abf84f3889eb6a918fc566ef8e787d3"
+all-inputs-sha256 = "2b1094c3210abf52ed0baafef86cd8c767c16de26e6af42a3981341ad9b20465"
+selection-inputs-sha256 = "88754643c21a6551a33db771f081bd3f6b2c275de34bc462a7e6f50c15559fc6"
+contents-sha256 = "fe9991395db46b929a6fa753c208186aa750d98474747963f35b5e81c52af46e"
