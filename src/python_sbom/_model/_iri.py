@@ -50,7 +50,7 @@ def iri_reference(text: str) -> str | None:
     # the form CycloneDX requires of a URL: a character no part of an IRI reference allows is percent-encoded, which
     # keeps what the text points at; a scheme, IP literal or port no encoding mends, as in the scp-style
     # git@github.com:org/repo.git, leaves None; the pattern matches any text, every part of it optional
-    match: Final = cast("re.Match[str]", _PARTS.fullmatch(text))
+    match: Final[re.Match[str]] = cast("re.Match[str]", _PARTS.fullmatch(text))
     scheme, authority, path, query, fragment = match.group("scheme", "authority", "path", "query", "fragment")
     if scheme is not None and not _SCHEME.fullmatch(scheme):
         return None

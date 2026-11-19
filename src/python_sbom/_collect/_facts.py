@@ -45,7 +45,7 @@ from python_sbom._model._metadata import parse_metadata  # simplint: ignore[priv
 from python_sbom._model._record import record_rows  # simplint: ignore[private-import-path]  # avoid root export
 
 if TYPE_CHECKING:
-    from collections.abc import Container, Sequence
+    from collections.abc import Container, Iterator, Sequence
     from importlib.metadata import Distribution
     from pathlib import Path
 
@@ -116,7 +116,9 @@ def _recorded_files(distribution: Distribution) -> list[RecordRow]:
         return []
     # RECORD read once and as written: Distribution.files would stat every row to drop files missing on disk, and build
     # a path object for each, while the SBOM lists what the install recorded
-    rows: Final = parse_record_file((distribution.read_text("RECORD") or "").splitlines())
+    rows: Final[Iterator[tuple[str, str, str]]] = parse_record_file(
+        (distribution.read_text("RECORD") or "").splitlines()
+    )
     try:
         return record_rows((row for row in rows if _describes_distribution(row[0])), distribution.name)
     except InvalidRecordEntry as error:

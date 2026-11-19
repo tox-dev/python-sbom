@@ -10,17 +10,16 @@ __lazy_modules__ = [
 ]
 
 import importlib
-from collections.abc import Mapping as _Mapping
+from collections.abc import Mapping
 from functools import cache, reduce
 from pathlib import Path
-from typing import Final, Protocol, cast
-from typing import TypeAlias as _TypeAlias
+from typing import Final, Protocol, TypeAlias, cast
 
 from ._collect import REVISION_FILE, default_revision, revision_record, settings_from_pyproject
 from ._errors import SbomError
 
 #: the settings a frontend passes each hook, such as ``--config-settings`` of pip and build
-ConfigSettings: _TypeAlias = _Mapping[str, str | list[str]] | None
+ConfigSettings: TypeAlias = Mapping[str, str | list[str]] | None
 
 # the hooks PEP 517 and PEP 660 let a backend leave out, which a frontend then replaces with its own default
 _OPTIONAL_HOOKS: Final[frozenset[str]] = frozenset({

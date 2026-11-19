@@ -42,10 +42,6 @@ if TYPE_CHECKING:
     from typing import IO
 
 
-# wheels verified at once, each perhaps in memory whole
-_WORKERS: Final[int] = 4
-
-
 def read_bundled_wheels(paths: list[str], open_wheel: Callable[[str], IO[bytes]]) -> list[BundledWheel]:
     # inflating and hashing release the GIL, so the wheels verify side by side, a few at a time, as each may be held in
     # memory whole; results and the first error come in the order given
@@ -53,7 +49,7 @@ def read_bundled_wheels(paths: list[str], open_wheel: Callable[[str], IO[bytes]]
         with open_wheel(path) as stream:
             return _read_bundled_wheel(stream, path)
 
-    with ThreadPoolExecutor(max_workers=_WORKERS) as pool:
+    with ThreadPoolExecutor(max_workers=4) as pool:
         return list(pool.map(read, paths))
 
 

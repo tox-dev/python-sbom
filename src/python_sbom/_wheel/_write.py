@@ -36,9 +36,6 @@ from python_sbom import SbomError
 
 from ._zip import open_archive, wheel_source
 
-# 1980-01-01, the earliest time a zip entry holds
-_ZIP_EPOCH: Final[int] = 315532800
-
 
 def write_sbom(wheel: Path, name: str, content: bytes, epoch: int) -> str:
     with open_archive(wheel, str(wheel)) as archive:
@@ -77,7 +74,9 @@ def write_sbom(wheel: Path, name: str, content: bytes, epoch: int) -> str:
 
 def _entry(name: str, epoch: int) -> zipfile.ZipInfo:
     # zip times start at 1980; Unix attributes whichever system writes the entry, so the bytes match across systems
-    entry: Final[zipfile.ZipInfo] = zipfile.ZipInfo(name, time.gmtime(max(epoch, _ZIP_EPOCH))[:6])
+    # 1980-01-01, the earliest time a zip entry holds
+    zip_epoch: int = 315532800
+    entry: Final[zipfile.ZipInfo] = zipfile.ZipInfo(name, time.gmtime(max(epoch, zip_epoch))[:6])
     entry.create_system = 3
     entry.external_attr = (stat.S_IFREG | 0o644) << 16
     return entry

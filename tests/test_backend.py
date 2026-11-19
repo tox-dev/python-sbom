@@ -4,7 +4,7 @@ import json
 import tarfile
 import zipfile
 from pathlib import Path
-from typing import TYPE_CHECKING, Final
+from typing import TYPE_CHECKING
 
 import flit_core.buildapi
 import pytest
@@ -16,17 +16,6 @@ if TYPE_CHECKING:
     from collections.abc import Mapping
 
     from tests.conftest import Git
-
-# an in-tree backend that defines only the two hooks PEP 517 requires, and an sdist holding the revision file already
-_MINIMAL: Final[str] = """\
-import flit_core.buildapi as flit
-
-build_wheel = flit.build_wheel
-
-
-def build_sdist(sdist_directory, config_settings=None):
-    return flit.build_sdist(sdist_directory, config_settings)
-"""
 
 
 @pytest.fixture
@@ -82,7 +71,18 @@ def test_optional_hook_comes_from_the_wrapped_backend() -> None:
 
 def test_optional_hook_the_backend_lacks_is_missing(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     (tmp_path / "project").mkdir()
-    (tmp_path / "project" / f"{tmp_path.name}.py").write_text(_MINIMAL, encoding="utf-8")
+    (tmp_path / "project" / f"{tmp_path.name}.py").write_text(
+        """\
+import flit_core.buildapi as flit
+
+build_wheel = flit.build_wheel
+
+
+def build_sdist(sdist_directory, config_settings=None):
+    return flit.build_sdist(sdist_directory, config_settings)
+""",
+        encoding="utf-8",
+    )
     write_project(tmp_path / "project", f"build-backend = '{tmp_path.name}'\n", monkeypatch)
     assert not hasattr(backend, "prepare_metadata_for_build_wheel")
 

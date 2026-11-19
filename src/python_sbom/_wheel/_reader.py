@@ -11,7 +11,7 @@ __lazy_modules__ = [
 from contextlib import contextmanager
 from dataclasses import dataclass
 from io import BytesIO
-from typing import TYPE_CHECKING, Final
+from typing import TYPE_CHECKING
 
 from ._bundled import read_bundled_wheels
 from ._zip import open_archive, read_member, sha256_hex
@@ -22,9 +22,6 @@ if TYPE_CHECKING:
     from pathlib import Path, PurePosixPath
 
     from python_sbom._model._inputs import BundledWheel  # simplint: ignore[private-import-path]  # avoid root export
-
-# a bundled wheel is read whole, to hash it and open it as a zip, so its size is capped as metadata's is
-_WHEEL_LIMIT: Final[int] = 512 * 1024 * 1024
 
 
 @contextmanager
@@ -56,8 +53,10 @@ class ArtifactReader:
     def bundled_wheels(self, names: list[str]) -> list[BundledWheel]:
         # zipfile serializes the seeks of concurrent member reads on its own lock, so the verifying threads share this
         # handle and inflate side by side
+        # a bundled wheel is read whole, to hash it and open it as a zip, so its size is capped as metadata's is
+        wheel_limit: int = 512 * 1024 * 1024
         return read_bundled_wheels(
-            names, lambda name: BytesIO(read_member(self.archive, name, str(self.path), _WHEEL_LIMIT))
+            names, lambda name: BytesIO(read_member(self.archive, name, str(self.path), wheel_limit))
         )
 
 

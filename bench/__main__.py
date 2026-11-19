@@ -108,7 +108,7 @@ def _selected(names: list[str]) -> list[str]:
 
 def _run(work: Path, out: Path, names: list[str], clock: str, passthrough: list[str]) -> None:
     out.mkdir(parents=True, exist_ok=True)
-    fixtures: Final = load(work)
+    fixtures: Final[dict[str, str]] = load(work)
     for name in names:
         if missing := [key for key in CASES[name].needs if key not in fixtures]:
             sys.stdout.write(f"skip {name}: no fixture {', '.join(missing)}\n")
@@ -166,7 +166,7 @@ def _cpu_time() -> float:
 
 def _profile(work: Path, out: Path, names: list[str], *, py_spy: bool) -> None:
     out.mkdir(parents=True, exist_ok=True)
-    fixtures: Final = load(work)
+    fixtures: Final[dict[str, str]] = load(work)
     summary: Final[list[str]] = []
     for name in names:
         if any(key not in fixtures for key in CASES[name].needs):

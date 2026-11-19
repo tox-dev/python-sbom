@@ -51,7 +51,7 @@ _HEADERS: Final[MappingProxyType[str, str]] = MappingProxyType({
 def parse_metadata(text: str) -> CoreMetadata:
     # not validated: the SBOM describes a distribution whose metadata breaks the specification as well, as written; the
     # body holds the long description, which nothing reads, and parsing it took most of the time
-    headers: Final = text[: match.start()] if (match := _BODY.search(text)) else text
+    headers: Final[str] = text[: match.start()] if (match := _BODY.search(text)) else text
     raw, unparsed = parse_email(headers)
     return CoreMetadata(raw=raw, unparsed=unparsed, headers=headers)
 

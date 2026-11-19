@@ -93,7 +93,7 @@ def read_member(archive: zipfile.ZipFile, name: str, where: str, limit: int = _M
 
 def sha256_hex(stream: IO[bytes]) -> str:
     # hashlib.file_digest wants readinto, which a zip member stream typed as IO[bytes] does not promise
-    digest: Final = hashlib.sha256()
+    digest = hashlib.sha256()
     while chunk := stream.read(CHUNK):
         digest.update(chunk)
     return digest.hexdigest()

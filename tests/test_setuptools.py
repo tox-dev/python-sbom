@@ -24,23 +24,6 @@ pytestmark: Final[pytest.MarkDecorator] = pytest.mark.filterwarnings(
     "ignore:The setuptools.file_finders entry point is deprecated:DeprecationWarning"
 )
 
-# the project's own wheel command, which the plugin must keep
-_SETUP: Final[str] = """\
-from pathlib import Path
-
-from setuptools import setup
-from setuptools.command.bdist_wheel import bdist_wheel
-
-
-class Wheel(bdist_wheel):
-    def run(self):
-        Path("custom-ran").write_text("yes")
-        super().run()
-
-
-setup(cmdclass={"bdist_wheel": Wheel})
-"""
-
 
 @pytest.fixture
 def project(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
@@ -76,7 +59,23 @@ def test_wheel_carries_valid_sbom(project: Path) -> None:
 
 
 def test_project_wheel_command_is_kept(project: Path) -> None:
-    (project / "setup.py").write_text(_SETUP, encoding="utf-8")
+    # the project's own wheel command, which the plugin must keep
+    setup: str = """\
+from pathlib import Path
+
+from setuptools import setup
+from setuptools.command.bdist_wheel import bdist_wheel
+
+
+class Wheel(bdist_wheel):
+    def run(self):
+        Path("custom-ran").write_text("yes")
+        super().run()
+
+
+setup(cmdclass={"bdist_wheel": Wheel})
+"""
+    (project / "setup.py").write_text(setup, encoding="utf-8")
     wheel = project / "dist" / build_meta.build_wheel(str(project / "dist"))
     assert ((project / "custom-ran").read_text(encoding="utf-8"), sboms(wheel)) == (
         "yes",

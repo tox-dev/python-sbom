@@ -43,15 +43,6 @@ if TYPE_CHECKING:
         Document,
     )
 
-# the schema leaves these optional, yet every document python-sbom writes carries them and the checks below read them
-_REQUIRED: Final[tuple[tuple[str, ...], ...]] = (
-    ("metadata", "timestamp"),
-    ("metadata", "tools", "components"),
-    ("metadata", "component", "bom-ref"),
-    ("metadata", "component", "name"),
-    ("components",),
-    ("dependencies",),
-)
 _SERIAL: Final[re.Pattern[str]] = re.compile(
     r"""
     urn:uuid:       # UUID namespace
@@ -63,11 +54,6 @@ _SERIAL: Final[re.Pattern[str]] = re.compile(
     """,
     re.VERBOSE,
 )
-# the modules of the validate extra
-_EXTRA: Final[tuple[str, ...]] = ("jsonschema_rs", "license_expression", "spdx_tools")
-# the schema validator recurses once per level and crashes the process past a few thousand levels on a small thread
-# stack; the SBOMs python-sbom and other tools write nest about a dozen levels deep
-_MAX_DEPTH: Final[int] = 128
 
 
 def validate_document(
@@ -95,10 +81,9 @@ def _problems(raw: bytes, allowed_licenses: frozenset[str] | None, max_component
     # actions/attest needs, resolvable and unique bom-refs and a valid SPDX rendering, and meet the license policy. A
     # missing extra fails every document alike, while importing it, half a second, waits until the cheap census passes
     missing_extra: Final[str] = "validation needs the validate extra: pip install 'python-sbom[validate]'"
-    if any(find_spec(name) is None for name in _EXTRA):
+    if any(find_spec(name) is None for name in ("jsonschema_rs", "license_expression", "spdx_tools")):
         raise MissingExtraError(missing_extra)
-    loaded: Final = load_json(raw)
-    if census := _census_problems(loaded, max_components):
+    if census := _census_problems(loaded := load_json(raw), max_components):
         return census
     # find_spec sees only the top-level modules, not a dependency of theirs that is missing or broken
     try:
@@ -114,7 +99,16 @@ def _problems(raw: bytes, allowed_licenses: frozenset[str] | None, max_component
         prop.get("name", "").endswith(f":{SBOM_FILE}") for prop in loaded.get("metadata", {}).get("properties", [])
     ):
         return []
-    missing: Final[list[str]] = [".".join(path) for path in _REQUIRED if not has_path(loaded, path)]
+    # The schema leaves these optional, but the checks for documents written by python-sbom need them.
+    required = (
+        ("metadata", "timestamp"),
+        ("metadata", "tools", "components"),
+        ("metadata", "component", "bom-ref"),
+        ("metadata", "component", "name"),
+        ("components",),
+        ("dependencies",),
+    )
+    missing: Final[list[str]] = [".".join(path) for path in required if not has_path(loaded, path)]
     # is_document holds once nothing is missing; asking it narrows the loaded JSON to a document
     if missing or not is_document(loaded):
         return [f"lacks {', '.join(missing)}, which every document python-sbom writes carries"]
@@ -145,6 +139,9 @@ def _census_problems(document: Json, max_components: int) -> list[str]:
     # only lists and objects go on the stack, every other value is judged where its container is read, so a scalar
     # nests too deep when its container already sits at the limit; the document starts out as the one item of a list
     pending: Final[list[tuple[list[Json] | dict[str, Json], int]]] = [([document], 0)]
+    # the schema validator recurses once per level and crashes the process past a few thousand levels on a small thread
+    # stack; the SBOMs python-sbom and other tools write nest about a dozen levels deep
+    max_depth: int = 128
     while pending:
         node, depth = pending.pop()
         if isinstance(node, dict):
@@ -159,8 +156,8 @@ def _census_problems(document: Json, max_components: int) -> list[str]:
                 )
             ]
         children = node.values() if isinstance(node, dict) else node
-        if children and depth >= _MAX_DEPTH:
-            return [f"nests more than {_MAX_DEPTH} levels deep, too deep to check"]
+        if children and depth >= max_depth:
+            return [f"nests more than {max_depth} levels deep, too deep to check"]
         if problem := _push_containers(children, depth + 1, pending):
             return problem
     # every bom-ref in the document, wherever it sits, as CycloneDX requires them unique and documents other tools wrote
