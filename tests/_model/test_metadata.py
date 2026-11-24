@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import pytest
-from packaging.metadata import Metadata
+from packaging.metadata import InvalidMetadata, Metadata
 
 from python_sbom._model._components import component_from_metadata
 from python_sbom._model._metadata import parse_metadata
@@ -66,23 +66,26 @@ def test_project_urls(fields: str, urls: list[tuple[str, str]]) -> None:
 
 # the headers of installed distributions that packaging's validating parser rejects, which the SBOM still describes
 @pytest.mark.parametrize(
-    ("text", "described"),
+    ("text", "invalid_fields", "described"),
     [
         pytest.param(
             "Metadata-Version: 2.1\nName: six\nVersion: 1.17.0\nLicense: MIT\n"
             "Classifier: License :: OSI Approved :: MIT License\nLicense-File: LICENSE\n",
+            {"license-file"},
             ("six", "1.17.0", ["MIT License", "MIT"]),
             id="six-license-file-before-2.4",
         ),
         pytest.param(
             "Metadata-Version: 2.1\nName: covdefaults\nVersion: 2.3.0\nLicense: MIT\n"
             "Description-Content-Type: text/markdown\nLicense-File: LICENSE\nRequires-Dist: coverage (>=6.0.2)\n",
+            {"license-file"},
             ("covdefaults", "2.3.0", ["MIT"]),
             id="covdefaults-license-file-before-2.4",
         ),
         pytest.param(
             "Metadata-Version: 2.0\nName: ply\nVersion: 3.11\nLicense: BSD\nDescription-Content-Type: UNKNOWN\n"
             "Platform: UNKNOWN\n",
+            {"metadata-version", "description-content-type"},
             ("ply", "3.11", ["BSD"]),
             id="ply-unknown-version-and-content-type",
         ),
@@ -90,14 +93,18 @@ def test_project_urls(fields: str, urls: list[tuple[str, str]]) -> None:
             "Metadata-Version: 2.1\nName: uri-template\nVersion: 1.3.0\nLicense: MIT License\n"
             "Project-URL: homepage, https://gitlab.linss.com/open-source/python/uri-template\nKeywords: config\n"
             "License-File: LICENSE\nProvides-Extra: dev\nRequires-Dist: mypy ; extra == 'dev'\n",
+            {"license-file"},
             ("uri-template", "1.3.0", ["MIT License"]),
             id="uri-template-license-file-before-2.4",
         ),
     ],
 )
-def test_metadata_the_validating_parser_rejects(text: str, described: tuple[str, str, list[str]]) -> None:
-    with pytest.raises(ExceptionGroup):
+def test_metadata_the_validating_parser_rejects(
+    text: str, invalid_fields: set[str], described: tuple[str, str, list[str]]
+) -> None:
+    with pytest.RaisesGroup(*([InvalidMetadata] * len(invalid_fields))) as rejected:
         Metadata.from_email(text, validate=True)
+    assert {error.field for error in rejected.value.exceptions} == invalid_fields
     component = component_from_metadata(parse_metadata(text))
     names = [entry["license"]["name"] for entry in component["licenses"] if "name" in entry["license"]]
     assert (component["name"], component["version"], names) == described
